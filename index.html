@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172554">
+<meta name="description" content="Bilişim Teknolojileri öğretmeni Erkut Aydın için öğretmen evrak, ders programı, kaynak ve proje takip paneli.">
+<title>Erkut Aydın | Öğretmen Paneli</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <div class="brand"><div class="brand-mark">EA</div><div><strong>Erkut Aydın</strong><span>Öğretmen Paneli</span></div></div>
+    <div class="side-label">ÇALIŞMA ALANI</div>
+    <nav id="nav">
+      <button class="nav-item active" data-page="dashboard"><span>▦</span> Genel Bakış</button>
+      <button class="nav-item" data-page="schedule"><span>▦</span> Ders Programı</button>
+      <button class="nav-item" data-page="documents"><span>▤</span> Evrak Takibi</button>
+      <button class="nav-item" data-page="resources"><span>▧</span> Ders Kaynakları</button>
+      <button class="nav-item" data-page="projects"><span>⌘</span> Projeler</button>
+      <button class="nav-item" data-page="tasks"><span>✓</span> Görev Listesi</button>
+      <button class="nav-item" data-page="calendar"><span>◷</span> Takvim & Notlar</button>
+    </nav>
+    <div class="sidebar-bottom"><div class="mini-avatar">EA</div><div><strong>Erkut Aydın</strong><span>Bilişim Teknolojileri</span></div><span class="online-dot"></span></div>
+  </aside>
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-btn" id="menuBtn" aria-label="Menüyü aç">☰</button>
+      <div class="crumb">Öğretmen Alanı <span>/</span> <strong id="crumbTitle">Genel Bakış</strong></div>
+      <div class="top-actions"><span class="today" id="today"></span><button class="icon-btn" id="themeBtn" title="Görünümü değiştir">◐</button><div class="top-avatar">EA</div></div>
+    </header>
+    <section class="content">
+      <div class="welcome-row"><div><p class="eyebrow">BİLİŞİM TEKNOLOJİLERİ • ORTAOKUL</p><h1 id="pageTitle">Günaydın, Erkut Öğretmen 👋</h1><p class="muted" id="pageSubtitle">Derslerini, evraklarını ve projelerini tek bir yerden takip et.</p></div><button class="primary-btn" id="quickAdd">＋ Hızlı Ekle</button></div>
+      <div id="pageContent"></div>
+      <footer>© <span id="year"></span> Erkut Aydın · Öğretmen çalışma alanı <span class="footer-note">Bu sürüm verileri bu tarayıcıda saklar.</span></footer>
+    </section>
+  </main>
+</div>
+<div class="toast" id="toast" role="status"></div>
+<dialog id="itemDialog">
+  <form method="dialog" id="itemForm">
+    <div class="dialog-head"><div><p class="eyebrow">ÇALIŞMA ALANI</p><h2 id="dialogTitle">Yeni kayıt</h2></div><button class="icon-btn" value="cancel" aria-label="Kapat">✕</button></div>
+    <label for="itemName">Başlık</label><input id="itemName" name="name" required placeholder="Örn. 6. sınıf algoritma etkinliği">
+    <label for="itemType">Kategori</label><select id="itemType" name="type"><option value="task">Görev</option><option value="document">Evrak</option><option value="resource">Kaynak</option><option value="project">Proje</option><option value="note">Not</option></select>
+    <label for="itemDate">Tarih (isteğe bağlı)</label><input id="itemDate" name="date" type="date">
+    <label for="itemDetail">Açıklama (isteğe bağlı)</label><textarea id="itemDetail" name="detail" rows="3" placeholder="Kısa bir açıklama ekleyin..."></textarea>
+    <div class="dialog-actions"><button class="secondary-btn" value="cancel">Vazgeç</button><button class="primary-btn" id="saveItem" value="default">Kaydet</button></div>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>
